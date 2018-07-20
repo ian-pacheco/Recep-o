@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using RecepcaoApresentacao;
+using System;
 using System.Windows.Forms;
 
-namespace Recepcao {
+namespace Recepcao
+{
     static class Program {
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
@@ -13,7 +12,8 @@ namespace Recepcao {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new TelaCadastroFuncionario());
+            Application.Run(new TelaAcesso());
         }
     }
 }

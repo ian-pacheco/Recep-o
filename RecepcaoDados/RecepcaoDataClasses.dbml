@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RecepcaoSistema" Class="RecepcaoDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DTI-127\SQLEXPRESS;Initial Catalog=RecepcaoSistema;Persist Security Info=True;User ID=sa" SettingsObjectName="RecepcaoDados.Properties.Settings" SettingsPropertyName="RecepcaoSistemaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Funcionario" Member="Funcionario">
+    <Type Name="Funcionario">
+      <Column Name="IdFuncionario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Perfil" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Funcionario_Visita" Member="Visita" ThisKey="IdFuncionario" OtherKey="IdFuncionario" Type="Visita" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visita" Member="Visita">
+    <Type Name="Visita">
+      <Column Name="IdVisita" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdVisitante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdFuncionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Secretaria" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Setor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContatoInterno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Liberacao" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Funcionario_Visita" Member="Funcionario" ThisKey="IdFuncionario" OtherKey="IdFuncionario" Type="Funcionario" IsForeignKey="true" />
+      <Association Name="Visitante_Visita" Member="Visitante" ThisKey="IdVisitante" OtherKey="IdVisitante" Type="Visitante" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visitante" Member="Visitante">
+    <Type Name="Visitante">
+      <Column Name="IdVisitante" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="RNE" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estrangeiro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Idade" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Logradouro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Pais" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Foto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Visitante_Visita" Member="Visita" ThisKey="IdVisitante" OtherKey="IdVisitante" Type="Visita" />
+    </Type>
+  </Table>
+</Database>
