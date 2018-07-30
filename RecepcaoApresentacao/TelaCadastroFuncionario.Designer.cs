@@ -161,7 +161,7 @@
             this.CbbPerfil.Location = new System.Drawing.Point(130, 265);
             this.CbbPerfil.Name = "CbbPerfil";
             this.CbbPerfil.Size = new System.Drawing.Size(253, 21);
-            this.CbbPerfil.TabIndex = 10;
+            this.CbbPerfil.TabIndex = 5;
             this.CbbPerfil.SelectedIndexChanged += new System.EventHandler(this.CbbPerfil_SelectedIndexChanged);
             // 
             // TelaCadastroFuncionario

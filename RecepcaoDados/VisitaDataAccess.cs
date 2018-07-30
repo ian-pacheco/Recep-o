@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace RecepcaoDados {
-    class VisitaDataAccess {
+    public class VisitaDataAccess {
 
         //Insere visita na tabela visita
-        public bool Criar(Visita visita)  {
+        public static bool Criar(Visita visita)  {
 
             try {
                 RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();
@@ -21,7 +21,7 @@ namespace RecepcaoDados {
         }
 
         //Insere uma lista de visitas na tabela Visita
-        public bool Criar(List<Visita> visitas) {
+        public static bool Criar(List<Visita> visitas) {
 
             try {
                 RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();
@@ -36,7 +36,7 @@ namespace RecepcaoDados {
         }
 
         //Deleta visita na tabela Visita
-        public bool Deleta(Visita visita) {
+        public static bool Deleta(Visita visita) {
 
             try {
                 RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();
@@ -51,7 +51,7 @@ namespace RecepcaoDados {
         }
 
         //Deleta uma lista de visita na tabela Visita
-        public bool Deleta(List<Visita> visitas) {
+        public static bool Deleta(List<Visita> visitas) {
 
             try {
                 RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();
@@ -66,7 +66,7 @@ namespace RecepcaoDados {
         }
 
         //Deleta visita utilizando id, na tabela Visita
-        public bool Deleta(int visita) {
+        public static bool Deleta(int visita) {
 
             try {
                 RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();
@@ -83,7 +83,7 @@ namespace RecepcaoDados {
         }
 
         //Consulta visita na tabela Visita
-        public Visita ConsultaVisitan(int idVisita) {
+        public static Visita ConsultaVisita(int idVisita) {
 
             RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();
             Visita iVisita = (from selecao in Db.Visita where selecao.IdVisita == idVisita select selecao).SingleOrDefault();
@@ -91,15 +91,17 @@ namespace RecepcaoDados {
         }
 
         //Consulta lista de visita na tabela Visita
-        public List<Visita> ConsultaVisita() {
+        public static List<Visita> ConsultaVisita() {
 
             RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();
-            List<Visita> iVisita = (from selecao in Db.Visita orderby selecao.Data descending select selecao).ToList();
+            List<Visita> iVisita = (from selecao in Db.Visita
+                                    orderby selecao.Data 
+                                    descending select selecao).ToList();
             return iVisita;
         }
 
         //Atualizar visita utilizando id, na tabela Visita
-        public bool Atualiza(Visita idVisita) {
+        public static bool Atualiza(Visita idVisita) {
 
             try {
                 RecepcaoDataClassesDataContext Db = new RecepcaoDataClassesDataContext();

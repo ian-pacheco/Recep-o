@@ -11,14 +11,6 @@ namespace RecepcaoApresentacao {
             AcceptButton = BtnEntrar;
         }
 
-        private void TelaAcesso_Load(object sender, EventArgs e) {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e) {
-
-        }
-
         private void BtnEntrar_Click(object sender, EventArgs e) {
             string senhaDecripto;
             senhaDecripto = FuncionarioController.AcertaSenha(TxtLogin.Text, TxtSenha.Text);
@@ -27,6 +19,8 @@ namespace RecepcaoApresentacao {
                 List<Funcionario> lista = FuncionarioDataAccess.ObterLogin(TxtLogin.Text, senhaDecripto);
                 if (lista.Count != 0) {
                     MessageBox.Show("Bem vindo ao Sistema Recepção", "Prefeitura de Jacareí", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TelaVisitantes visita = new TelaVisitantes();
+                    visita.ShowDialog();
                 }
                 if (lista.Count == 0) {
                     MessageBox.Show("Usuário ou senha incorretos", "Prefeitura de Jacareí", MessageBoxButtons.OK, MessageBoxIcon.Error);

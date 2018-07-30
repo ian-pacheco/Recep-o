@@ -54,6 +54,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcaoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecepcaoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcaoSistemaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecepcaoSistemaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TelaAcesso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +81,18 @@
     </Compile>
     <Compile Include="TelaCadastroFuncionario.Designer.cs">
       <DependentUpon>TelaCadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPrincipal.Designer.cs">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaVisitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaVisitantes.Designer.cs">
+      <DependentUpon>TelaVisitantes.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +116,41 @@
     <EmbeddedResource Include="TelaCadastroFuncionario.resx">
       <DependentUpon>TelaCadastroFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TelaPrincipal.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaVisitantes.resx">
+      <DependentUpon>TelaVisitantes.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RecepcaoDataSet.xsc">
+      <DependentUpon>RecepcaoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecepcaoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecepcaoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecepcaoDataSet.xss">
+      <DependentUpon>RecepcaoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecepcaoSistemaDataSet.xsc">
+      <DependentUpon>RecepcaoSistemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecepcaoSistemaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecepcaoSistemaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecepcaoSistemaDataSet.xss">
+      <DependentUpon>RecepcaoSistemaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

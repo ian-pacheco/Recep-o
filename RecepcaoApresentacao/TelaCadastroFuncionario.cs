@@ -72,10 +72,14 @@ namespace RecepcaoApresentacao {
         private void TxtLogin_Leave(object sender, EventArgs e) {
             List<Funcionario> ListaLogin = FuncionarioController.ConsultaLogin(TxtLogin.Text);
 
-            if (ListaLogin.Count != 0) {
-                MessageBox.Show("Login já existente!", "Sistema Recepção", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TxtLogin.Text = "";
-                TxtLogin.Select();
+            try {
+                if (ListaLogin.Count != 0) {
+                    MessageBox.Show("Login já existente!", "Sistema Recepção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TxtLogin.Text = ("");
+                    TxtLogin.Select();
+                }
+            } catch (Exception) {
+                MessageBox.Show("Verificar conexão com o Banco de dados");
             }
         }
 
@@ -87,5 +91,6 @@ namespace RecepcaoApresentacao {
                 TxtConfirmarSenha.Text = ("");
             }
         }
+
     }
 }

@@ -2,36 +2,36 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RecepcaoDataClasses">
   <DataContextMoniker Name="/RecepcaoDataClassesDataContext" />
   <nestedChildShapes>
-    <classShape Id="847e9dda-4427-4b61-8e71-aa2268d70ec6" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+    <classShape Id="c5b81d39-10b2-4d61-a643-54a1d3a95522" absoluteBounds="1.125, 0.5, 2, 1.7708968098958331">
       <DataClassMoniker Name="/RecepcaoDataClassesDataContext/Funcionario" />
       <nestedChildShapes>
-        <elementListCompartment Id="99fc561a-7eab-46b4-b2ca-a2863efd185d" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="61e4e495-033b-4a66-993c-cc737ba5a62b" absoluteBounds="1.1400000000000001, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="23abab65-4709-4d26-a4a7-b1f70f22a6f7" absoluteBounds="4.75, 1.5, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/RecepcaoDataClassesDataContext/Visita" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3dbd67dc-0d63-43c5-910d-df7cbae4215b" absoluteBounds="4.765, 1.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.88544840494792); (4.75 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/RecepcaoDataClassesDataContext/Funcionario/Funcionario_Visita" />
-      <nodes>
-        <classShapeMoniker Id="847e9dda-4427-4b61-8e71-aa2268d70ec6" />
-        <classShapeMoniker Id="23abab65-4709-4d26-a4a7-b1f70f22a6f7" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="2e1b5606-d016-4211-a168-7b63598c11d6" absoluteBounds="0.5, 2.625, 2, 3.3093082682291666">
+    <classShape Id="2919a0c0-85f7-4d84-af69-e18e4502bae4" absoluteBounds="1.125, 2.75, 2, 3.3093082682291666">
       <DataClassMoniker Name="/RecepcaoDataClassesDataContext/Visitante" />
       <nestedChildShapes>
-        <elementListCompartment Id="12499b80-903b-4e49-8059-ea59334a68f8" absoluteBounds="0.51499999999999968, 3.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="41df4b98-c278-413e-b657-cb7c78ae3cb1" absoluteBounds="1.1399999999999997, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 3.23640055338542); (4.75 : 3.23640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <classShape Id="b5ff946b-7fd1-4308-b32e-8e0abcc02fda" absoluteBounds="5.125, 1.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/RecepcaoDataClassesDataContext/Visita" />
+      <nestedChildShapes>
+        <elementListCompartment Id="484c9f4c-9b67-44c6-85b8-f4b5657c5ca8" absoluteBounds="5.1400000000000006, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 2.01044840494792); (5.125 : 2.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/RecepcaoDataClassesDataContext/Funcionario/Funcionario_Visita" />
+      <nodes>
+        <classShapeMoniker Id="c5b81d39-10b2-4d61-a643-54a1d3a95522" />
+        <classShapeMoniker Id="b5ff946b-7fd1-4308-b32e-8e0abcc02fda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 3.42390055338542); (5.125 : 3.42390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/RecepcaoDataClassesDataContext/Visitante/Visitante_Visita" />
       <nodes>
-        <classShapeMoniker Id="2e1b5606-d016-4211-a168-7b63598c11d6" />
-        <classShapeMoniker Id="23abab65-4709-4d26-a4a7-b1f70f22a6f7" />
+        <classShapeMoniker Id="2919a0c0-85f7-4d84-af69-e18e4502bae4" />
+        <classShapeMoniker Id="b5ff946b-7fd1-4308-b32e-8e0abcc02fda" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

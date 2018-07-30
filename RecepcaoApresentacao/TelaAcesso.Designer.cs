@@ -39,7 +39,7 @@
             this.BtnEntrar.Location = new System.Drawing.Point(47, 264);
             this.BtnEntrar.Name = "BtnEntrar";
             this.BtnEntrar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtnEntrar.Size = new System.Drawing.Size(120, 23);
+            this.BtnEntrar.Size = new System.Drawing.Size(120, 41);
             this.BtnEntrar.TabIndex = 3;
             this.BtnEntrar.Text = "Entrar";
             this.BtnEntrar.UseVisualStyleBackColor = true;
@@ -62,7 +62,6 @@
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Login:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -78,7 +77,7 @@
             this.BtnPrimeiroAcesso.Location = new System.Drawing.Point(189, 264);
             this.BtnPrimeiroAcesso.Name = "BtnPrimeiroAcesso";
             this.BtnPrimeiroAcesso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtnPrimeiroAcesso.Size = new System.Drawing.Size(120, 23);
+            this.BtnPrimeiroAcesso.Size = new System.Drawing.Size(120, 41);
             this.BtnPrimeiroAcesso.TabIndex = 4;
             this.BtnPrimeiroAcesso.Text = "Primeiro Acesso";
             this.BtnPrimeiroAcesso.UseVisualStyleBackColor = true;
@@ -96,7 +95,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(47, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(262, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,10 +114,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtSenha);
             this.Controls.Add(this.BtnEntrar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TelaAcesso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.TelaAcesso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

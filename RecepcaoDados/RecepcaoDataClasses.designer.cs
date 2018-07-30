@@ -33,12 +33,12 @@ namespace RecepcaoDados
     partial void InsertFuncionario(Funcionario instance);
     partial void UpdateFuncionario(Funcionario instance);
     partial void DeleteFuncionario(Funcionario instance);
-    partial void InsertVisita(Visita instance);
-    partial void UpdateVisita(Visita instance);
-    partial void DeleteVisita(Visita instance);
     partial void InsertVisitante(Visitante instance);
     partial void UpdateVisitante(Visitante instance);
     partial void DeleteVisitante(Visitante instance);
+    partial void InsertVisita(Visita instance);
+    partial void UpdateVisita(Visita instance);
+    partial void DeleteVisita(Visita instance);
     #endregion
 		
 		public RecepcaoDataClassesDataContext() : 
@@ -79,19 +79,19 @@ namespace RecepcaoDados
 			}
 		}
 		
-		public System.Data.Linq.Table<Visita> Visita
-		{
-			get
-			{
-				return this.GetTable<Visita>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Visitante> Visitante
 		{
 			get
 			{
 				return this.GetTable<Visitante>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Visita> Visita
+		{
+			get
+			{
+				return this.GetTable<Visita>();
 			}
 		}
 	}
@@ -279,318 +279,6 @@ namespace RecepcaoDados
 		{
 			this.SendPropertyChanging();
 			entity.Funcionario = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Visita")]
-	public partial class Visita : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdVisita;
-		
-		private int _IdVisitante;
-		
-		private int _IdFuncionario;
-		
-		private string _Secretaria;
-		
-		private string _Setor;
-		
-		private string _ContatoInterno;
-		
-		private bool _Liberacao;
-		
-		private System.DateTime _Data;
-		
-		private EntityRef<Funcionario> _Funcionario;
-		
-		private EntityRef<Visitante> _Visitante;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdVisitaChanging(int value);
-    partial void OnIdVisitaChanged();
-    partial void OnIdVisitanteChanging(int value);
-    partial void OnIdVisitanteChanged();
-    partial void OnIdFuncionarioChanging(int value);
-    partial void OnIdFuncionarioChanged();
-    partial void OnSecretariaChanging(string value);
-    partial void OnSecretariaChanged();
-    partial void OnSetorChanging(string value);
-    partial void OnSetorChanged();
-    partial void OnContatoInternoChanging(string value);
-    partial void OnContatoInternoChanged();
-    partial void OnLiberacaoChanging(bool value);
-    partial void OnLiberacaoChanged();
-    partial void OnDataChanging(System.DateTime value);
-    partial void OnDataChanged();
-    #endregion
-		
-		public Visita()
-		{
-			this._Funcionario = default(EntityRef<Funcionario>);
-			this._Visitante = default(EntityRef<Visitante>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdVisita", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdVisita
-		{
-			get
-			{
-				return this._IdVisita;
-			}
-			set
-			{
-				if ((this._IdVisita != value))
-				{
-					this.OnIdVisitaChanging(value);
-					this.SendPropertyChanging();
-					this._IdVisita = value;
-					this.SendPropertyChanged("IdVisita");
-					this.OnIdVisitaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdVisitante", DbType="Int NOT NULL")]
-		public int IdVisitante
-		{
-			get
-			{
-				return this._IdVisitante;
-			}
-			set
-			{
-				if ((this._IdVisitante != value))
-				{
-					if (this._Visitante.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIdVisitanteChanging(value);
-					this.SendPropertyChanging();
-					this._IdVisitante = value;
-					this.SendPropertyChanged("IdVisitante");
-					this.OnIdVisitanteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFuncionario", DbType="Int NOT NULL")]
-		public int IdFuncionario
-		{
-			get
-			{
-				return this._IdFuncionario;
-			}
-			set
-			{
-				if ((this._IdFuncionario != value))
-				{
-					if (this._Funcionario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIdFuncionarioChanging(value);
-					this.SendPropertyChanging();
-					this._IdFuncionario = value;
-					this.SendPropertyChanged("IdFuncionario");
-					this.OnIdFuncionarioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Secretaria", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Secretaria
-		{
-			get
-			{
-				return this._Secretaria;
-			}
-			set
-			{
-				if ((this._Secretaria != value))
-				{
-					this.OnSecretariaChanging(value);
-					this.SendPropertyChanging();
-					this._Secretaria = value;
-					this.SendPropertyChanged("Secretaria");
-					this.OnSecretariaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Setor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Setor
-		{
-			get
-			{
-				return this._Setor;
-			}
-			set
-			{
-				if ((this._Setor != value))
-				{
-					this.OnSetorChanging(value);
-					this.SendPropertyChanging();
-					this._Setor = value;
-					this.SendPropertyChanged("Setor");
-					this.OnSetorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContatoInterno", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string ContatoInterno
-		{
-			get
-			{
-				return this._ContatoInterno;
-			}
-			set
-			{
-				if ((this._ContatoInterno != value))
-				{
-					this.OnContatoInternoChanging(value);
-					this.SendPropertyChanging();
-					this._ContatoInterno = value;
-					this.SendPropertyChanged("ContatoInterno");
-					this.OnContatoInternoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Liberacao", DbType="Bit NOT NULL")]
-		public bool Liberacao
-		{
-			get
-			{
-				return this._Liberacao;
-			}
-			set
-			{
-				if ((this._Liberacao != value))
-				{
-					this.OnLiberacaoChanging(value);
-					this.SendPropertyChanging();
-					this._Liberacao = value;
-					this.SendPropertyChanged("Liberacao");
-					this.OnLiberacaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime Data
-		{
-			get
-			{
-				return this._Data;
-			}
-			set
-			{
-				if ((this._Data != value))
-				{
-					this.OnDataChanging(value);
-					this.SendPropertyChanging();
-					this._Data = value;
-					this.SendPropertyChanged("Data");
-					this.OnDataChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Funcionario_Visita", Storage="_Funcionario", ThisKey="IdFuncionario", OtherKey="IdFuncionario", IsForeignKey=true)]
-		public Funcionario Funcionario
-		{
-			get
-			{
-				return this._Funcionario.Entity;
-			}
-			set
-			{
-				Funcionario previousValue = this._Funcionario.Entity;
-				if (((previousValue != value) 
-							|| (this._Funcionario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Funcionario.Entity = null;
-						previousValue.Visita.Remove(this);
-					}
-					this._Funcionario.Entity = value;
-					if ((value != null))
-					{
-						value.Visita.Add(this);
-						this._IdFuncionario = value.IdFuncionario;
-					}
-					else
-					{
-						this._IdFuncionario = default(int);
-					}
-					this.SendPropertyChanged("Funcionario");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visitante_Visita", Storage="_Visitante", ThisKey="IdVisitante", OtherKey="IdVisitante", IsForeignKey=true)]
-		public Visitante Visitante
-		{
-			get
-			{
-				return this._Visitante.Entity;
-			}
-			set
-			{
-				Visitante previousValue = this._Visitante.Entity;
-				if (((previousValue != value) 
-							|| (this._Visitante.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Visitante.Entity = null;
-						previousValue.Visita.Remove(this);
-					}
-					this._Visitante.Entity = value;
-					if ((value != null))
-					{
-						value.Visita.Add(this);
-						this._IdVisitante = value.IdVisitante;
-					}
-					else
-					{
-						this._IdVisitante = default(int);
-					}
-					this.SendPropertyChanged("Visitante");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -969,6 +657,318 @@ namespace RecepcaoDados
 		{
 			this.SendPropertyChanging();
 			entity.Visitante = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Visita")]
+	public partial class Visita : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdVisita;
+		
+		private int _IdVisitante;
+		
+		private int _IdFuncionario;
+		
+		private string _Secretaria;
+		
+		private string _Setor;
+		
+		private string _ContatoInterno;
+		
+		private bool _Liberacao;
+		
+		private System.DateTime _Data;
+		
+		private EntityRef<Funcionario> _Funcionario;
+		
+		private EntityRef<Visitante> _Visitante;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdVisitaChanging(int value);
+    partial void OnIdVisitaChanged();
+    partial void OnIdVisitanteChanging(int value);
+    partial void OnIdVisitanteChanged();
+    partial void OnIdFuncionarioChanging(int value);
+    partial void OnIdFuncionarioChanged();
+    partial void OnSecretariaChanging(string value);
+    partial void OnSecretariaChanged();
+    partial void OnSetorChanging(string value);
+    partial void OnSetorChanged();
+    partial void OnContatoInternoChanging(string value);
+    partial void OnContatoInternoChanged();
+    partial void OnLiberacaoChanging(bool value);
+    partial void OnLiberacaoChanged();
+    partial void OnDataChanging(System.DateTime value);
+    partial void OnDataChanged();
+    #endregion
+		
+		public Visita()
+		{
+			this._Funcionario = default(EntityRef<Funcionario>);
+			this._Visitante = default(EntityRef<Visitante>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdVisita", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdVisita
+		{
+			get
+			{
+				return this._IdVisita;
+			}
+			set
+			{
+				if ((this._IdVisita != value))
+				{
+					this.OnIdVisitaChanging(value);
+					this.SendPropertyChanging();
+					this._IdVisita = value;
+					this.SendPropertyChanged("IdVisita");
+					this.OnIdVisitaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdVisitante", DbType="Int NOT NULL")]
+		public int IdVisitante
+		{
+			get
+			{
+				return this._IdVisitante;
+			}
+			set
+			{
+				if ((this._IdVisitante != value))
+				{
+					if (this._Visitante.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdVisitanteChanging(value);
+					this.SendPropertyChanging();
+					this._IdVisitante = value;
+					this.SendPropertyChanged("IdVisitante");
+					this.OnIdVisitanteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdFuncionario", DbType="Int NOT NULL")]
+		public int IdFuncionario
+		{
+			get
+			{
+				return this._IdFuncionario;
+			}
+			set
+			{
+				if ((this._IdFuncionario != value))
+				{
+					if (this._Funcionario.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdFuncionarioChanging(value);
+					this.SendPropertyChanging();
+					this._IdFuncionario = value;
+					this.SendPropertyChanged("IdFuncionario");
+					this.OnIdFuncionarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Secretaria", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Secretaria
+		{
+			get
+			{
+				return this._Secretaria;
+			}
+			set
+			{
+				if ((this._Secretaria != value))
+				{
+					this.OnSecretariaChanging(value);
+					this.SendPropertyChanging();
+					this._Secretaria = value;
+					this.SendPropertyChanged("Secretaria");
+					this.OnSecretariaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Setor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Setor
+		{
+			get
+			{
+				return this._Setor;
+			}
+			set
+			{
+				if ((this._Setor != value))
+				{
+					this.OnSetorChanging(value);
+					this.SendPropertyChanging();
+					this._Setor = value;
+					this.SendPropertyChanged("Setor");
+					this.OnSetorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContatoInterno", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ContatoInterno
+		{
+			get
+			{
+				return this._ContatoInterno;
+			}
+			set
+			{
+				if ((this._ContatoInterno != value))
+				{
+					this.OnContatoInternoChanging(value);
+					this.SendPropertyChanging();
+					this._ContatoInterno = value;
+					this.SendPropertyChanged("ContatoInterno");
+					this.OnContatoInternoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Liberacao", DbType="Bit NOT NULL")]
+		public bool Liberacao
+		{
+			get
+			{
+				return this._Liberacao;
+			}
+			set
+			{
+				if ((this._Liberacao != value))
+				{
+					this.OnLiberacaoChanging(value);
+					this.SendPropertyChanging();
+					this._Liberacao = value;
+					this.SendPropertyChanged("Liberacao");
+					this.OnLiberacaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this.OnDataChanging(value);
+					this.SendPropertyChanging();
+					this._Data = value;
+					this.SendPropertyChanged("Data");
+					this.OnDataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Funcionario_Visita", Storage="_Funcionario", ThisKey="IdFuncionario", OtherKey="IdFuncionario", IsForeignKey=true)]
+		public Funcionario Funcionario
+		{
+			get
+			{
+				return this._Funcionario.Entity;
+			}
+			set
+			{
+				Funcionario previousValue = this._Funcionario.Entity;
+				if (((previousValue != value) 
+							|| (this._Funcionario.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Funcionario.Entity = null;
+						previousValue.Visita.Remove(this);
+					}
+					this._Funcionario.Entity = value;
+					if ((value != null))
+					{
+						value.Visita.Add(this);
+						this._IdFuncionario = value.IdFuncionario;
+					}
+					else
+					{
+						this._IdFuncionario = default(int);
+					}
+					this.SendPropertyChanged("Funcionario");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Visitante_Visita", Storage="_Visitante", ThisKey="IdVisitante", OtherKey="IdVisitante", IsForeignKey=true)]
+		public Visitante Visitante
+		{
+			get
+			{
+				return this._Visitante.Entity;
+			}
+			set
+			{
+				Visitante previousValue = this._Visitante.Entity;
+				if (((previousValue != value) 
+							|| (this._Visitante.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Visitante.Entity = null;
+						previousValue.Visita.Remove(this);
+					}
+					this._Visitante.Entity = value;
+					if ((value != null))
+					{
+						value.Visita.Add(this);
+						this._IdVisitante = value.IdVisitante;
+					}
+					else
+					{
+						this._IdVisitante = default(int);
+					}
+					this.SendPropertyChanged("Visitante");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

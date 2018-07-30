@@ -13,7 +13,7 @@ namespace Recepcao
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new TelaCadastroFuncionario());
-            Application.Run(new TelaAcesso());
+            Application.Run(new TelaVisitantes());
         }
     }
 }

@@ -33,5 +33,27 @@ namespace RecepcaoApresentacao.Properties {
                 return ((string)(this["RecepcaoSistemaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Pacheco\\sqlexpress;Initial Catalog=Recepcao;Persist Security Info=Tru" +
+            "e;User ID=sa;Password=led")]
+        public string RecepcaoConnectionString {
+            get {
+                return ((string)(this["RecepcaoConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DTI-127\\SQLEXPRESS;Initial Catalog=RecepcaoSistema;Integrated Securit" +
+            "y=True")]
+        public string RecepcaoSistemaConnectionString1 {
+            get {
+                return ((string)(this["RecepcaoSistemaConnectionString1"]));
+            }
+        }
     }
 }

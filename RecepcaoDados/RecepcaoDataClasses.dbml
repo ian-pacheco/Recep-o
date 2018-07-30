@@ -10,20 +10,6 @@
       <Association Name="Funcionario_Visita" Member="Visita" ThisKey="IdFuncionario" OtherKey="IdFuncionario" Type="Visita" />
     </Type>
   </Table>
-  <Table Name="dbo.Visita" Member="Visita">
-    <Type Name="Visita">
-      <Column Name="IdVisita" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IdVisitante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="IdFuncionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Secretaria" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Setor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ContatoInterno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Liberacao" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Data" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Funcionario_Visita" Member="Funcionario" ThisKey="IdFuncionario" OtherKey="IdFuncionario" Type="Funcionario" IsForeignKey="true" />
-      <Association Name="Visitante_Visita" Member="Visitante" ThisKey="IdVisitante" OtherKey="IdVisitante" Type="Visitante" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Visitante" Member="Visitante">
     <Type Name="Visitante">
       <Column Name="IdVisitante" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -40,6 +26,20 @@
       <Column Name="Pais" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Foto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Visitante_Visita" Member="Visita" ThisKey="IdVisitante" OtherKey="IdVisitante" Type="Visita" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visita" Member="Visita">
+    <Type Name="Visita">
+      <Column Name="IdVisita" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdVisitante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdFuncionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Secretaria" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Setor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContatoInterno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Liberacao" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Funcionario_Visita" Member="Funcionario" ThisKey="IdFuncionario" OtherKey="IdFuncionario" Type="Funcionario" IsForeignKey="true" />
+      <Association Name="Visitante_Visita" Member="Visitante" ThisKey="IdVisitante" OtherKey="IdVisitante" Type="Visitante" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
