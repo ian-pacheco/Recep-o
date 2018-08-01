@@ -39,6 +39,9 @@ namespace RecepcaoDados
     partial void InsertVisita(Visita instance);
     partial void UpdateVisita(Visita instance);
     partial void DeleteVisita(Visita instance);
+    partial void InsertSecretaria(Secretaria instance);
+    partial void UpdateSecretaria(Secretaria instance);
+    partial void DeleteSecretaria(Secretaria instance);
     #endregion
 		
 		public RecepcaoDataClassesDataContext() : 
@@ -92,6 +95,14 @@ namespace RecepcaoDados
 			get
 			{
 				return this.GetTable<Visita>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Secretaria> Secretaria
+		{
+			get
+			{
+				return this.GetTable<Secretaria>();
 			}
 		}
 	}
@@ -947,6 +958,548 @@ namespace RecepcaoDados
 						this._IdVisitante = default(int);
 					}
 					this.SendPropertyChanged("Visitante");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Secretaria")]
+	public partial class Secretaria : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdSecretaria;
+		
+		private string _Administracao_e_RH;
+		
+		private string _Assistencia_Social;
+		
+		private string _Desenvolvimento_Econômico;
+		
+		private string _Educação;
+		
+		private string _Esportes_e_Recreação;
+		
+		private string _Finanças;
+		
+		private string _Gabinete_do_Prefeito;
+		
+		private string _Governo;
+		
+		private string _Infreaestrutura;
+		
+		private string _Meio_Ambiente;
+		
+		private string _Mobilidade_Urbana;
+		
+		private string _Planejamento;
+		
+		private string _Procuradoria_Geral;
+		
+		private string _Saúde;
+		
+		private string _Segurança_e_Defesa_do_Cidadão;
+		
+		private string _Fundação_Cultural_de_Jacareí;
+		
+		private string _Fundação_ProLar;
+		
+		private string _IPMJ;
+		
+		private string _SAAE;
+		
+		private string _SRJ;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdSecretariaChanging(int value);
+    partial void OnIdSecretariaChanged();
+    partial void OnAdministracao_e_RHChanging(string value);
+    partial void OnAdministracao_e_RHChanged();
+    partial void OnAssistencia_SocialChanging(string value);
+    partial void OnAssistencia_SocialChanged();
+    partial void OnDesenvolvimento_EconômicoChanging(string value);
+    partial void OnDesenvolvimento_EconômicoChanged();
+    partial void OnEducaçãoChanging(string value);
+    partial void OnEducaçãoChanged();
+    partial void OnEsportes_e_RecreaçãoChanging(string value);
+    partial void OnEsportes_e_RecreaçãoChanged();
+    partial void OnFinançasChanging(string value);
+    partial void OnFinançasChanged();
+    partial void OnGabinete_do_PrefeitoChanging(string value);
+    partial void OnGabinete_do_PrefeitoChanged();
+    partial void OnGovernoChanging(string value);
+    partial void OnGovernoChanged();
+    partial void OnInfreaestruturaChanging(string value);
+    partial void OnInfreaestruturaChanged();
+    partial void OnMeio_AmbienteChanging(string value);
+    partial void OnMeio_AmbienteChanged();
+    partial void OnMobilidade_UrbanaChanging(string value);
+    partial void OnMobilidade_UrbanaChanged();
+    partial void OnPlanejamentoChanging(string value);
+    partial void OnPlanejamentoChanged();
+    partial void OnProcuradoria_GeralChanging(string value);
+    partial void OnProcuradoria_GeralChanged();
+    partial void OnSaúdeChanging(string value);
+    partial void OnSaúdeChanged();
+    partial void OnSegurança_e_Defesa_do_CidadãoChanging(string value);
+    partial void OnSegurança_e_Defesa_do_CidadãoChanged();
+    partial void OnFundação_Cultural_de_JacareíChanging(string value);
+    partial void OnFundação_Cultural_de_JacareíChanged();
+    partial void OnFundação_ProLarChanging(string value);
+    partial void OnFundação_ProLarChanged();
+    partial void OnIPMJChanging(string value);
+    partial void OnIPMJChanged();
+    partial void OnSAAEChanging(string value);
+    partial void OnSAAEChanged();
+    partial void OnSRJChanging(string value);
+    partial void OnSRJChanged();
+    #endregion
+		
+		public Secretaria()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdSecretaria", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdSecretaria
+		{
+			get
+			{
+				return this._IdSecretaria;
+			}
+			set
+			{
+				if ((this._IdSecretaria != value))
+				{
+					this.OnIdSecretariaChanging(value);
+					this.SendPropertyChanging();
+					this._IdSecretaria = value;
+					this.SendPropertyChanged("IdSecretaria");
+					this.OnIdSecretariaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Administracao e RH]", Storage="_Administracao_e_RH", DbType="VarChar(20)")]
+		public string Administracao_e_RH
+		{
+			get
+			{
+				return this._Administracao_e_RH;
+			}
+			set
+			{
+				if ((this._Administracao_e_RH != value))
+				{
+					this.OnAdministracao_e_RHChanging(value);
+					this.SendPropertyChanging();
+					this._Administracao_e_RH = value;
+					this.SendPropertyChanged("Administracao_e_RH");
+					this.OnAdministracao_e_RHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Assistencia Social]", Storage="_Assistencia_Social", DbType="VarChar(20)")]
+		public string Assistencia_Social
+		{
+			get
+			{
+				return this._Assistencia_Social;
+			}
+			set
+			{
+				if ((this._Assistencia_Social != value))
+				{
+					this.OnAssistencia_SocialChanging(value);
+					this.SendPropertyChanging();
+					this._Assistencia_Social = value;
+					this.SendPropertyChanged("Assistencia_Social");
+					this.OnAssistencia_SocialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desenvolvimento Econômico]", Storage="_Desenvolvimento_Econômico", DbType="VarChar(20)")]
+		public string Desenvolvimento_Econômico
+		{
+			get
+			{
+				return this._Desenvolvimento_Econômico;
+			}
+			set
+			{
+				if ((this._Desenvolvimento_Econômico != value))
+				{
+					this.OnDesenvolvimento_EconômicoChanging(value);
+					this.SendPropertyChanging();
+					this._Desenvolvimento_Econômico = value;
+					this.SendPropertyChanged("Desenvolvimento_Econômico");
+					this.OnDesenvolvimento_EconômicoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Educação", DbType="VarChar(20)")]
+		public string Educação
+		{
+			get
+			{
+				return this._Educação;
+			}
+			set
+			{
+				if ((this._Educação != value))
+				{
+					this.OnEducaçãoChanging(value);
+					this.SendPropertyChanging();
+					this._Educação = value;
+					this.SendPropertyChanged("Educação");
+					this.OnEducaçãoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Esportes e Recreação]", Storage="_Esportes_e_Recreação", DbType="VarChar(20)")]
+		public string Esportes_e_Recreação
+		{
+			get
+			{
+				return this._Esportes_e_Recreação;
+			}
+			set
+			{
+				if ((this._Esportes_e_Recreação != value))
+				{
+					this.OnEsportes_e_RecreaçãoChanging(value);
+					this.SendPropertyChanging();
+					this._Esportes_e_Recreação = value;
+					this.SendPropertyChanged("Esportes_e_Recreação");
+					this.OnEsportes_e_RecreaçãoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Finanças", DbType="VarChar(20)")]
+		public string Finanças
+		{
+			get
+			{
+				return this._Finanças;
+			}
+			set
+			{
+				if ((this._Finanças != value))
+				{
+					this.OnFinançasChanging(value);
+					this.SendPropertyChanging();
+					this._Finanças = value;
+					this.SendPropertyChanged("Finanças");
+					this.OnFinançasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Gabinete do Prefeito]", Storage="_Gabinete_do_Prefeito", DbType="VarChar(20)")]
+		public string Gabinete_do_Prefeito
+		{
+			get
+			{
+				return this._Gabinete_do_Prefeito;
+			}
+			set
+			{
+				if ((this._Gabinete_do_Prefeito != value))
+				{
+					this.OnGabinete_do_PrefeitoChanging(value);
+					this.SendPropertyChanging();
+					this._Gabinete_do_Prefeito = value;
+					this.SendPropertyChanged("Gabinete_do_Prefeito");
+					this.OnGabinete_do_PrefeitoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Governo", DbType="VarChar(20)")]
+		public string Governo
+		{
+			get
+			{
+				return this._Governo;
+			}
+			set
+			{
+				if ((this._Governo != value))
+				{
+					this.OnGovernoChanging(value);
+					this.SendPropertyChanging();
+					this._Governo = value;
+					this.SendPropertyChanged("Governo");
+					this.OnGovernoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Infreaestrutura", DbType="VarChar(20)")]
+		public string Infreaestrutura
+		{
+			get
+			{
+				return this._Infreaestrutura;
+			}
+			set
+			{
+				if ((this._Infreaestrutura != value))
+				{
+					this.OnInfreaestruturaChanging(value);
+					this.SendPropertyChanging();
+					this._Infreaestrutura = value;
+					this.SendPropertyChanged("Infreaestrutura");
+					this.OnInfreaestruturaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Meio Ambiente]", Storage="_Meio_Ambiente", DbType="VarChar(20)")]
+		public string Meio_Ambiente
+		{
+			get
+			{
+				return this._Meio_Ambiente;
+			}
+			set
+			{
+				if ((this._Meio_Ambiente != value))
+				{
+					this.OnMeio_AmbienteChanging(value);
+					this.SendPropertyChanging();
+					this._Meio_Ambiente = value;
+					this.SendPropertyChanged("Meio_Ambiente");
+					this.OnMeio_AmbienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Mobilidade Urbana]", Storage="_Mobilidade_Urbana", DbType="VarChar(20)")]
+		public string Mobilidade_Urbana
+		{
+			get
+			{
+				return this._Mobilidade_Urbana;
+			}
+			set
+			{
+				if ((this._Mobilidade_Urbana != value))
+				{
+					this.OnMobilidade_UrbanaChanging(value);
+					this.SendPropertyChanging();
+					this._Mobilidade_Urbana = value;
+					this.SendPropertyChanged("Mobilidade_Urbana");
+					this.OnMobilidade_UrbanaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Planejamento", DbType="VarChar(20)")]
+		public string Planejamento
+		{
+			get
+			{
+				return this._Planejamento;
+			}
+			set
+			{
+				if ((this._Planejamento != value))
+				{
+					this.OnPlanejamentoChanging(value);
+					this.SendPropertyChanging();
+					this._Planejamento = value;
+					this.SendPropertyChanged("Planejamento");
+					this.OnPlanejamentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Procuradoria Geral]", Storage="_Procuradoria_Geral", DbType="VarChar(20)")]
+		public string Procuradoria_Geral
+		{
+			get
+			{
+				return this._Procuradoria_Geral;
+			}
+			set
+			{
+				if ((this._Procuradoria_Geral != value))
+				{
+					this.OnProcuradoria_GeralChanging(value);
+					this.SendPropertyChanging();
+					this._Procuradoria_Geral = value;
+					this.SendPropertyChanged("Procuradoria_Geral");
+					this.OnProcuradoria_GeralChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Saúde", DbType="VarChar(20)")]
+		public string Saúde
+		{
+			get
+			{
+				return this._Saúde;
+			}
+			set
+			{
+				if ((this._Saúde != value))
+				{
+					this.OnSaúdeChanging(value);
+					this.SendPropertyChanging();
+					this._Saúde = value;
+					this.SendPropertyChanged("Saúde");
+					this.OnSaúdeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Segurança e Defesa do Cidadão]", Storage="_Segurança_e_Defesa_do_Cidadão", DbType="VarChar(20)")]
+		public string Segurança_e_Defesa_do_Cidadão
+		{
+			get
+			{
+				return this._Segurança_e_Defesa_do_Cidadão;
+			}
+			set
+			{
+				if ((this._Segurança_e_Defesa_do_Cidadão != value))
+				{
+					this.OnSegurança_e_Defesa_do_CidadãoChanging(value);
+					this.SendPropertyChanging();
+					this._Segurança_e_Defesa_do_Cidadão = value;
+					this.SendPropertyChanged("Segurança_e_Defesa_do_Cidadão");
+					this.OnSegurança_e_Defesa_do_CidadãoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Fundação Cultural de Jacareí]", Storage="_Fundação_Cultural_de_Jacareí", DbType="VarChar(20)")]
+		public string Fundação_Cultural_de_Jacareí
+		{
+			get
+			{
+				return this._Fundação_Cultural_de_Jacareí;
+			}
+			set
+			{
+				if ((this._Fundação_Cultural_de_Jacareí != value))
+				{
+					this.OnFundação_Cultural_de_JacareíChanging(value);
+					this.SendPropertyChanging();
+					this._Fundação_Cultural_de_Jacareí = value;
+					this.SendPropertyChanged("Fundação_Cultural_de_Jacareí");
+					this.OnFundação_Cultural_de_JacareíChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Fundação ProLar]", Storage="_Fundação_ProLar", DbType="VarChar(20)")]
+		public string Fundação_ProLar
+		{
+			get
+			{
+				return this._Fundação_ProLar;
+			}
+			set
+			{
+				if ((this._Fundação_ProLar != value))
+				{
+					this.OnFundação_ProLarChanging(value);
+					this.SendPropertyChanging();
+					this._Fundação_ProLar = value;
+					this.SendPropertyChanged("Fundação_ProLar");
+					this.OnFundação_ProLarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IPMJ", DbType="VarChar(20)")]
+		public string IPMJ
+		{
+			get
+			{
+				return this._IPMJ;
+			}
+			set
+			{
+				if ((this._IPMJ != value))
+				{
+					this.OnIPMJChanging(value);
+					this.SendPropertyChanging();
+					this._IPMJ = value;
+					this.SendPropertyChanged("IPMJ");
+					this.OnIPMJChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SAAE", DbType="VarChar(20)")]
+		public string SAAE
+		{
+			get
+			{
+				return this._SAAE;
+			}
+			set
+			{
+				if ((this._SAAE != value))
+				{
+					this.OnSAAEChanging(value);
+					this.SendPropertyChanging();
+					this._SAAE = value;
+					this.SendPropertyChanged("SAAE");
+					this.OnSAAEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SRJ", DbType="VarChar(20)")]
+		public string SRJ
+		{
+			get
+			{
+				return this._SRJ;
+			}
+			set
+			{
+				if ((this._SRJ != value))
+				{
+					this.OnSRJChanging(value);
+					this.SendPropertyChanging();
+					this._SRJ = value;
+					this.SendPropertyChanged("SRJ");
+					this.OnSRJChanged();
 				}
 			}
 		}

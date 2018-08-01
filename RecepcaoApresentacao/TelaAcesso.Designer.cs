@@ -52,7 +52,6 @@
             this.TxtSenha.PasswordChar = '*';
             this.TxtSenha.Size = new System.Drawing.Size(214, 20);
             this.TxtSenha.TabIndex = 2;
-            this.TxtSenha.TextChanged += new System.EventHandler(this.TxtSenha_TextChanged);
             // 
             // label1
             // 
@@ -89,13 +88,12 @@
             this.TxtLogin.Name = "TxtLogin";
             this.TxtLogin.Size = new System.Drawing.Size(214, 20);
             this.TxtLogin.TabIndex = 1;
-            this.TxtLogin.TextChanged += new System.EventHandler(this.TxtLogin_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(47, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(262, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,6 +102,7 @@
             // 
             // TelaAcesso
             // 
+            this.AcceptButton = this.BtnEntrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 341);

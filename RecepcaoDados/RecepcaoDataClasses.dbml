@@ -42,4 +42,29 @@
       <Association Name="Visitante_Visita" Member="Visitante" ThisKey="IdVisitante" OtherKey="IdVisitante" Type="Visitante" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Secretaria" Member="Secretaria">
+    <Type Name="Secretaria">
+      <Column Name="IdSecretaria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Administracao e RH]" Member="Administracao_e_RH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Assistencia Social]" Member="Assistencia_Social" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Desenvolvimento Econômico]" Member="Desenvolvimento_Econômico" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Educação" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Esportes e Recreação]" Member="Esportes_e_Recreação" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Finanças" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Gabinete do Prefeito]" Member="Gabinete_do_Prefeito" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Governo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Infreaestrutura" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Meio Ambiente]" Member="Meio_Ambiente" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Mobilidade Urbana]" Member="Mobilidade_Urbana" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Planejamento" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Procuradoria Geral]" Member="Procuradoria_Geral" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Saúde" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Segurança e Defesa do Cidadão]" Member="Segurança_e_Defesa_do_Cidadão" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Fundação Cultural de Jacareí]" Member="Fundação_Cultural_de_Jacareí" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Fundação ProLar]" Member="Fundação_ProLar" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IPMJ" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SAAE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SRJ" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

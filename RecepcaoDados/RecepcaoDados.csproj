@@ -53,6 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecepcaoDataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="SecretariaDataAccess.cs" />
     <Compile Include="VisitaDataAccess.cs" />
     <Compile Include="VisitanteDataAccess.cs" />
   </ItemGroup>

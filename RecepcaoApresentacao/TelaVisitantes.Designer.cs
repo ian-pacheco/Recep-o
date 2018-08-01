@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtRNE = new System.Windows.Forms.TextBox();
+            this.TxtRG = new System.Windows.Forms.TextBox();
             this.BtnNovaVisita = new System.Windows.Forms.Button();
             this.DgvVisitantes = new System.Windows.Forms.DataGridView();
             this.idVisitanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,8 +71,6 @@
             this.ttMensagem = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.visitanteTableAdapter = new RecepcaoApresentacao.RecepcaoSistemaDataSetTableAdapters.VisitanteTableAdapter();
-            this.TxtRG = new System.Windows.Forms.TextBox();
-            this.TxtRNE = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVisitantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitanteBindingSource)).BeginInit();
@@ -117,6 +117,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Visitantes";
             // 
+            // TxtRNE
+            // 
+            this.TxtRNE.Location = new System.Drawing.Point(71, 97);
+            this.TxtRNE.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtRNE.Name = "TxtRNE";
+            this.TxtRNE.Size = new System.Drawing.Size(193, 20);
+            this.TxtRNE.TabIndex = 4;
+            // 
+            // TxtRG
+            // 
+            this.TxtRG.Location = new System.Drawing.Point(71, 73);
+            this.TxtRG.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtRG.Name = "TxtRG";
+            this.TxtRG.Size = new System.Drawing.Size(193, 20);
+            this.TxtRG.TabIndex = 3;
+            // 
             // BtnNovaVisita
             // 
             this.BtnNovaVisita.Location = new System.Drawing.Point(380, 74);
@@ -125,6 +141,7 @@
             this.BtnNovaVisita.TabIndex = 22;
             this.BtnNovaVisita.Text = "Cadastrar Nova Visita";
             this.BtnNovaVisita.UseVisualStyleBackColor = true;
+            this.BtnNovaVisita.Click += new System.EventHandler(this.BtnNovaVisita_Click);
             // 
             // DgvVisitantes
             // 
@@ -494,22 +511,6 @@
             // 
             this.visitanteTableAdapter.ClearBeforeFill = true;
             // 
-            // TxtRG
-            // 
-            this.TxtRG.Location = new System.Drawing.Point(71, 73);
-            this.TxtRG.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtRG.Name = "TxtRG";
-            this.TxtRG.Size = new System.Drawing.Size(193, 20);
-            this.TxtRG.TabIndex = 3;
-            // 
-            // TxtRNE
-            // 
-            this.TxtRNE.Location = new System.Drawing.Point(71, 97);
-            this.TxtRNE.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtRNE.Name = "TxtRNE";
-            this.TxtRNE.Size = new System.Drawing.Size(193, 20);
-            this.TxtRNE.TabIndex = 4;
-            // 
             // TelaVisitantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,6 +521,7 @@
             this.Name = "TelaVisitantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Recepção - Visitantes";
+            this.Load += new System.EventHandler(this.TelaVisitantes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVisitantes)).EndInit();

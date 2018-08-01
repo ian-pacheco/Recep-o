@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace RecepcaoApresentacao {
     public partial class TelaAcesso : Form {
+
         public TelaAcesso() {
             InitializeComponent();
             AcceptButton = BtnEntrar;
@@ -18,12 +19,11 @@ namespace RecepcaoApresentacao {
             try {
                 List<Funcionario> lista = FuncionarioDataAccess.ObterLogin(TxtLogin.Text, senhaDecripto);
                 if (lista.Count != 0) {
-                    MessageBox.Show("Bem vindo ao Sistema Recepção", "Prefeitura de Jacareí", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    TelaVisitantes visita = new TelaVisitantes();
-                    visita.ShowDialog();
+                   MessageBox.Show("Bem vindo ao Sistema Recepção", "Prefeitura de Jacareí", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 if (lista.Count == 0) {
-                    MessageBox.Show("Usuário ou senha incorretos", "Prefeitura de Jacareí", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   MessageBox.Show("Usuário ou senha incorretos\nDeseja tentar novamente?", "Prefeitura de Jacareí", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     TxtLogin.Text = "";
                     TxtSenha.Text = "";
                     TxtLogin.Focus();
@@ -31,14 +31,6 @@ namespace RecepcaoApresentacao {
             } catch (Exception) {
                 throw;
             }
-
-        }
-
-        private void TxtSenha_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void TxtLogin_TextChanged(object sender, EventArgs e) {
 
         }
 

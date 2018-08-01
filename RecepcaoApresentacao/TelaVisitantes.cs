@@ -7,6 +7,16 @@ using System.Windows.Forms;
 namespace RecepcaoApresentacao {
     public partial class TelaVisitantes : Form {
 
+        private void TelaVisitantes_Load(object sender, EventArgs e) {
+            using (TelaAcesso tela = new TelaAcesso()) {
+                tela.ShowDialog();
+                if (s == DialogResult.OK) {
+                    Close();
+                    return;
+                }
+            }
+        }
+
         public TelaVisitantes() {
             InitializeComponent();
             ttMensagem.SetToolTip(TxtNome, "Insira o nome completo da visita!");
@@ -54,6 +64,10 @@ namespace RecepcaoApresentacao {
                 MessageBox.Show("Digite um valor para os campos de busca\nNome, CPF, RG ou RNE\nApenas um campo é necessário.", "Sistema Recepção", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             // }
+        }
+
+        private void BtnNovaVisita_Click(object sender, EventArgs e) {
+            Transferir();
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e) {
@@ -171,6 +185,7 @@ namespace RecepcaoApresentacao {
             BtnEditar.Enabled = true;
             BtnExcluir.Enabled = true;
             BtnPesquisar.Enabled = false;
+            BtnNovaVisita.Enabled = true;
         }
 
         private void LimpaDados() {
@@ -199,6 +214,7 @@ namespace RecepcaoApresentacao {
             BtnEditar.Enabled = false;
             BtnExcluir.Enabled = false;
             BtnCancelar.Enabled = false;
+            BtnNovaVisita.Enabled = false;
         }     
 
         private void CheckBoxGrid() {
@@ -247,7 +263,13 @@ namespace RecepcaoApresentacao {
             TxtPais.Enabled = true;
             ChbEstrangeiro.Enabled = true;
             //TxtFotoEnabled = true;
-        }     
+        }    
+
+        public void Transferir() {
+            TelaVisita destino = new TelaVisita(TxtNome.Text, TxtCPF.Text, TxtRG.Text, TxtRNE.Text);
+            //Hide();
+            destino.ShowDialog();
+        }
     }
 }
 
